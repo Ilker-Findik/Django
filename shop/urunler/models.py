@@ -65,6 +65,7 @@ class Urunler (models.Model):
     resim = models.ImageField(upload_to='urunresimleri',blank=True,null=True,)
     tarih = models.DateTimeField(auto_now_add=True)
     etiketler = models.ManyToManyField(Etiketler,blank=True)
+    anasayfa = models.BooleanField(default=False)
 
     class Meta:
         verbose_name_plural = 'Urunler'

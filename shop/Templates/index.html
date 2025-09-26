@@ -1,0 +1,27 @@
+﻿{% extends "base.html" %}
+
+{% block title %}
+Anasayfa
+{% endblock %}
+
+{% block icerik %}
+    <div class="container pt-5">
+  <div class="row">
+    {% for urun in urunler %}
+    <div class="col-md-3 mt-3">
+      <div class="card h-100">
+        <img src="{{ urun.resim.url }}" class="card-img-top" alt="{{ urun.isim }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ urun.isim }}</h5>
+          <p class="card-text fs-5 mb-0">
+            {{ urun.indirimli_fiyat }} ₺
+            <del class="text-secondary fs-6 ms-2">{{ urun.fiyat }} ₺</del>
+          </p>
+          <a href="#" class="btn btn-success mt-2 w-100">Hemen Al.</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
